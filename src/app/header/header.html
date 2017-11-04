@@ -1,0 +1,13 @@
+&lt;baked-cake&gt; Order Management
+
+<div class="actions">
+  <button mat-icon-button (click)="highlight = !highlight"
+          [matTooltip]="!highlight ? 'Highlight components' : 'Remove highlight'">
+    <mat-icon> {{!highlight ? 'visibility' : 'visibility_off'}}</mat-icon>
+  </button>
+
+  <button mat-icon-button (click)="orderDatabase.openStores = !orderDatabase.openStores"
+          [matTooltip]="!orderDatabase.openStores ? 'Enable realtime orders' : 'Disable realtime orders'">
+    <mat-icon> {{!orderDatabase.openStores ? 'lock_open' : 'lock' }} </mat-icon>
+  </button>
+</div>

@@ -1,0 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+
+body.highlight {
+  * {
+    outline: 2px solid blue;
+  }
+}
