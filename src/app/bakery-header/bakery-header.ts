@@ -3,13 +3,13 @@ import {OrdersDatabase} from '../orders-db';
 
 @Component({
   selector: 'bakery-header',
-  templateUrl: './header.html',
-  styleUrls: ['./header.scss'],
+  templateUrl: './bakery-header.html',
+  styleUrls: ['./bakery-header.scss'],
   host: {
     'class': 'mat-elevation-z1',
   }
 })
-export class Header {
+export class BakeryHeaderComponent {
   set highlight(highlight: boolean) {
     document.querySelector('body').classList.toggle('highlight', highlight);
   }

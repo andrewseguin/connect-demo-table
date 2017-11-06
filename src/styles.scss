@@ -1,12 +1,73 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@mixin faded-text {
+  color: #DDD !important;
+}
+
+@mixin overlay-container {
+  position: relative;
+}
+
+@mixin overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  outline-width: 2px;
+  outline-style: solid;
+  margin: 2px;
+  font-family: monospace;
+}
+
 body {
   margin: 0;
+  font-family: 'Roboto';
   background: #f5f5f5;
 }
 
 body.highlight {
-  * {
-    outline: 2px solid blue;
+  mat-table {
+    @include overlay-container;
+    & * { @include faded-text; }
+
+    &:after {
+      @include overlay;
+      content: 'mat-table';
+      background: rgba(255, 0, 0, 0.2);
+      color: red;
+      outline-color: red;
+    }
+  }
+
+  mat-paginator {
+    @include overlay-container;
+    & * { @include faded-text; }
+
+    &:after {
+      @include overlay;
+      content: 'mat-paginator';
+      background: rgba(0, 0, 255, .1);
+      color: blue;
+      outline-color: blue;
+    }
+  }
+
+  div.header {
+    @include overlay-container;
+    & * { @include faded-text; }
+    @include faded-text;
+
+    &:after {
+      @include overlay;
+      content: 'div.header';
+      background: rgba(0, 128, 0, .1);
+      color: green;
+      outline-color: green;
+    }
   }
 }

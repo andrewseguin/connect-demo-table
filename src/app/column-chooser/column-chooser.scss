@@ -1,0 +1,62 @@
+:host {
+  min-width: 200px;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.title {
+  font-weight: lighter;
+}
+
+.mat-list-item {
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &.enabled {
+    font-weight: bold;
+    .name {
+      color: green;
+    }
+  }
+  &:hover {
+    background: #efefef;
+    .name {
+      color: green;
+    }
+  }
+  &:active {
+    background: #e5e5e5;
+  }
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  opacity: 0;
+
+  .enabled & {
+    opacity: 1;
+  }
+}
+
+.name {
+  flex-grow: 1;
+}
+
+.reorder {
+  opacity: 0;
+  .mat-list:hover & {
+    opacity: .54;
+  }
+}
+
+.mat-icon {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}

@@ -1,4 +1,62 @@
 <bakery-header></bakery-header>
 
-<!-- Table goes here -->
-Table of bakery orders
+<div class="page-content">
+  <column-chooser #columnChooser [columns]="definedColumns"></column-chooser>
+
+  <div class="bakery-orders-info mat-elevation-z4">
+    <div class="header"> Bakery Orders </div>
+
+    <mat-table [dataSource]="dataSource">
+      <!-- Column definition for data property: orderId -->
+      <ng-container matColumnDef="orderId">
+        <mat-header-cell *matHeaderCellDef> orderId </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.orderId}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: status -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> status </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.status}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: item -->
+      <ng-container matColumnDef="item">
+        <mat-header-cell *matHeaderCellDef> item </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.item}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: flavor -->
+      <ng-container matColumnDef="flavor">
+        <mat-header-cell *matHeaderCellDef> flavor </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.flavor}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: customer -->
+      <ng-container matColumnDef="customer">
+        <mat-header-cell *matHeaderCellDef> customer </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.customer}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: cost -->
+      <ng-container matColumnDef="cost">
+        <mat-header-cell *matHeaderCellDef> cost </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.cost | currency}} </mat-cell>
+      </ng-container>
+
+      <!-- Column definition for data property: quantity -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef> quantity </mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{order.quantity}} </mat-cell>
+      </ng-container>
+
+      <!-- Header and data row definitions to provide what columns to display (and their order) -->
+      <mat-header-row *matHeaderRowDef="columnChooser.selectedColumns"></mat-header-row>
+      <mat-row *matRowDef="let order; columns: columnChooser.selectedColumns" [@state]="order.status"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSize]="currentPage.value.size"
+                   [length]="ordersDatabase.orders.value.length"
+                   (page)="currentPage.next({page: $event.pageIndex, size: $event.pageSize})">
+    </mat-paginator>
+  </div>
+</div>

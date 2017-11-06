@@ -1,0 +1,15 @@
+<mat-list>
+  <mat-list-item class="title">Order Information</mat-list-item>
+  <mat-list-item *ngFor="let column of columns; trackBy: columnTrackBy"
+                 [class.enabled]="enabled.has(column)"
+                 (click)="toggleColumn(column)">
+    <div class="check">
+      <mat-icon>check</mat-icon>
+    </div>
+    <div class="name">{{column}}</div>
+    <div class="reorder">
+      <mat-icon (click)="move(column, 'down'); $event.stopPropagation()"> arrow_downward </mat-icon>
+      <mat-icon (click)="move(column, 'up'); $event.stopPropagation()"> arrow_upward </mat-icon>
+    </div>
+  </mat-list-item>
+</mat-list>

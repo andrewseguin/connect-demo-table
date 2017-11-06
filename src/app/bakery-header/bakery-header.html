@@ -6,8 +6,8 @@
     <mat-icon> {{!highlight ? 'visibility' : 'visibility_off'}}</mat-icon>
   </button>
 
-  <button mat-icon-button (click)="orderDatabase.openStores = !orderDatabase.openStores"
-          [matTooltip]="!orderDatabase.openStores ? 'Enable realtime orders' : 'Disable realtime orders'">
-    <mat-icon> {{!orderDatabase.openStores ? 'lock_open' : 'lock' }} </mat-icon>
+  <button mat-icon-button (click)="orderDatabase.storesClosed = !orderDatabase.storesClosed"
+          [matTooltip]="orderDatabase.storesClosed ? 'Enable realtime orders' : 'Disable realtime orders'">
+    <mat-icon> {{!orderDatabase.storesClosed ? 'cloud' : 'cloud_off' }}</mat-icon>
   </button>
 </div>

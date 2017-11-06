@@ -3,18 +3,22 @@ import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {CdkTableModule} from '@angular/cdk/table';
-import {MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
+import {MatIconModule, MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
 
 import {AppComponent} from './app.component';
 import {OrdersDatabase} from './orders-db';
-import {HeaderModule} from './header/header.module';
+import {BakeryHeaderModule} from './bakery-header/bakery-header.module';
+import {ColumnChooserModule} from './column-chooser/column-chooser.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HeaderModule,
+    BakeryHeaderModule,
+    ColumnChooserModule,
 
     // CDK modules
     CdkTableModule,
@@ -23,6 +27,7 @@ import {HeaderModule} from './header/header.module';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatIconModule,
   ],
   providers: [OrdersDatabase],
   bootstrap: [AppComponent]

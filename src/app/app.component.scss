@@ -3,4 +3,57 @@
   flex-direction: column;
   height: 100vh;
   align-items: center;
+  overflow: hidden;
+}
+
+.page-content {
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  min-height: 48px;
+  display: flex;
+  background: white;
+  align-items: center;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: lighter;
+  justify-content: space-between;
+  color: #444;
+}
+
+// Style table container to be 700px wide
+.bakery-orders-info {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 16px;
+  flex-grow: 1;
+}
+
+// Make table scrollable
+.mat-table {
+  overflow: auto;
+
+  // Extra styling - Sticky header row
+  .mat-header-row {
+    position: sticky;
+    top: 0;
+    background: white;
+  }
+
+  // Extra styling - add padding for each cell
+  .mat-cell, .mat-header-cell {
+    padding: 0 8px;
+  }
+
+  // Header cells should text-transform so that they are capitalized
+  .mat-header-cell {
+    text-transform: capitalize;
+  }
 }
