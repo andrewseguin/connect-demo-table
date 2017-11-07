@@ -70,4 +70,18 @@ body.highlight {
       outline-color: green;
     }
   }
+
+  column-chooser mat-list {
+    @include overlay-container;
+    & * { @include faded-text; }
+    @include faded-text;
+
+    &:after {
+      @include overlay;
+      content: 'column-chooser';
+      background: rgba(128, 0, 128, .1);
+      color: purple;
+      outline-color: purple;
+    }
+  }
 }

@@ -1,19 +1,10 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {BakeryOrder} from './app.component';
 
 export type BakedItem = 'Cake' | 'Cupcake' | 'Pastry' | 'Cookie';
 
 export type OrderStatus = 'Processing' | 'Baking' | 'Shipped' | 'Delivered';
-
-export interface BakeryOrder {
-  orderId: string;
-  item: BakedItem;
-  flavor: string;
-  quantity: number;
-  customer: string;
-  status: OrderStatus;
-  cost: number;
-}
 
 @Injectable()
 export class OrdersDatabase {

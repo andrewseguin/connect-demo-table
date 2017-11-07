@@ -51,7 +51,8 @@
 .reorder {
   opacity: 0;
   .mat-list:hover & {
-    opacity: .54;
+    // Disabled - looks like sort
+    // opacity: .54;
   }
 }
 
